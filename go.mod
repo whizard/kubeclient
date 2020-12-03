@@ -1,4 +1,4 @@
-module github.com/whizard/klient
+module github.com/whizard/kubeclient
 
 go 1.15
 
