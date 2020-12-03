@@ -1,4 +1,4 @@
-package klient
+package kubeclient
 
 import (
 	"context"

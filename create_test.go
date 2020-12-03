@@ -1,4 +1,4 @@
-package klient
+package kubeclient
 
 import (
 	"context"
@@ -113,7 +113,7 @@ func TestClient_CreateFile_thenDelete(t *testing.T) {
 				return isThere, nil
 			}, true,
 			envContext, envKubeconfig, false},
-		{"create secret from URL", []string{"https://raw.githubusercontent.com/johandry/klient/master/testdata/create/secret.yaml"},
+		{"create secret from URL", []string{"https://raw.githubusercontent.com/johandry/kubeclient/master/testdata/create/secret.yaml"},
 			func(c *Client) (bool, error) {
 				s, err := c.Clientset.CoreV1().Secrets("default").Get(context.Background(), "test-secret-create-0", metav1.GetOptions{})
 				if err != nil {

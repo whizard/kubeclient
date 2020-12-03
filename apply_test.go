@@ -1,4 +1,4 @@
-package klient
+package kubeclient
 
 import (
 	"context"
@@ -209,7 +209,7 @@ func TestClient_ApplyFiles_thenDelete(t *testing.T) {
 				return isThere, nil
 			}, true,
 			envContext, envKubeconfig, false},
-		{"apply secret from URL", []string{"https://raw.githubusercontent.com/johandry/klient/master/testdata/apply/secret.yaml"},
+		{"apply secret from URL", []string{"https://raw.githubusercontent.com/johandry/kubeclient/master/testdata/apply/secret.yaml"},
 			func(c *Client) (bool, error) {
 				s, err := c.Clientset.CoreV1().Secrets("default").Get(context.Background(), "test-secret-apply-0", metav1.GetOptions{})
 				if err != nil {

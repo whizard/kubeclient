@@ -1,4 +1,4 @@
-package klient
+package kubeclient
 
 import (
 	"k8s.io/apimachinery/pkg/api/errors"
