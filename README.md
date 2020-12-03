@@ -1,5 +1,3 @@
-[![Actions Status](https://github.com/johandry/klient/workflows/Unit%20Test/badge.svg)](https://github.com/johandry/klient/actions) [![Build Status](https://travis-ci.org/johandry/klient.svg?branch=master)](https://travis-ci.org/johandry/klient) [![codecov](https://codecov.io/gh/johandry/klient/branch/master/graph/badge.svg)](https://codecov.io/gh/johandry/klient) [![GoDoc](https://godoc.org/github.com/johandry/klient?status.svg)](https://godoc.org/github.com/johandry/klient) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
 # Klient
 
 Klient is a Simple Kubernetes Client in Go. Its goal is to provide an easy interface to communicate with a Kubernetes cluster similar to using the `kubectl` commands `apply`, `create`, `delete` and `replace`.
