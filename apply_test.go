@@ -1,7 +1,10 @@
 package klient
 
 import (
+<<<<<<< HEAD
 	"context"
+=======
+>>>>>>> copy of changed github.com/johandry/klient repo
 	"io/ioutil"
 	"log"
 	"os"
@@ -39,7 +42,11 @@ func TestClient_Apply_thenDelete(t *testing.T) {
 	}{
 		{"apply configMap", testData["apply/cm.yaml"],
 			func(c *Client) (bool, error) {
+<<<<<<< HEAD
 				cm, err := c.Clientset.CoreV1().ConfigMaps("default").Get(context.Background(), "test-apply-0", metav1.GetOptions{})
+=======
+				cm, err := c.Clientset.CoreV1().ConfigMaps("default").Get("test-apply-0", metav1.GetOptions{})
+>>>>>>> copy of changed github.com/johandry/klient repo
 				if err != nil {
 					return false, err
 				}
@@ -50,11 +57,19 @@ func TestClient_Apply_thenDelete(t *testing.T) {
 			envContext, envKubeconfig, false},
 		{"apply configMapList", testData["apply/cml.yaml"],
 			func(c *Client) (bool, error) {
+<<<<<<< HEAD
 				cm0, err := c.Clientset.CoreV1().ConfigMaps("default").Get(context.Background(), "test-apply-1", metav1.GetOptions{})
 				if err != nil {
 					return false, err
 				}
 				cm1, err := c.Clientset.CoreV1().ConfigMaps("default").Get(context.Background(), "test-apply-2", metav1.GetOptions{})
+=======
+				cm0, err := c.Clientset.CoreV1().ConfigMaps("default").Get("test-apply-1", metav1.GetOptions{})
+				if err != nil {
+					return false, err
+				}
+				cm1, err := c.Clientset.CoreV1().ConfigMaps("default").Get("test-apply-2", metav1.GetOptions{})
+>>>>>>> copy of changed github.com/johandry/klient repo
 				if err != nil {
 					return false, err
 				}
@@ -110,7 +125,11 @@ func TestClient_Apply_PatchAndDelete(t *testing.T) {
 			[]byte(`{"apiVersion": "v1", "kind": "ConfigMap", "metadata": { "name": "test-applypatch-0" }, "data": {	"key1": "apple" } }`),
 			[]byte(`{"apiVersion": "v1", "kind": "ConfigMap", "metadata": { "name": "test-applypatch-0" }, "data": {	"key1": "orange" } }`),
 			func(c *Client) (string, error) {
+<<<<<<< HEAD
 				cm, err := c.Clientset.CoreV1().ConfigMaps("default").Get(context.Background(), "test-applypatch-0", metav1.GetOptions{})
+=======
+				cm, err := c.Clientset.CoreV1().ConfigMaps("default").Get("test-applypatch-0", metav1.GetOptions{})
+>>>>>>> copy of changed github.com/johandry/klient repo
 				if err != nil {
 					return "", err
 				}
@@ -170,7 +189,11 @@ func TestClient_ApplyFiles_thenDelete(t *testing.T) {
 	}{
 		{"apply 1 configMap file", []string{"./testdata/apply/cm.yaml"},
 			func(c *Client) (bool, error) {
+<<<<<<< HEAD
 				cm, err := c.Clientset.CoreV1().ConfigMaps("default").Get(context.Background(), "test-apply-0", metav1.GetOptions{})
+=======
+				cm, err := c.Clientset.CoreV1().ConfigMaps("default").Get("test-apply-0", metav1.GetOptions{})
+>>>>>>> copy of changed github.com/johandry/klient repo
 				if err != nil {
 					return false, err
 				}
@@ -181,6 +204,7 @@ func TestClient_ApplyFiles_thenDelete(t *testing.T) {
 			envContext, envKubeconfig, false},
 		{"apply 2 configMap files", []string{"./testdata/apply/cm.yaml", "./testdata/apply/cml.yaml"},
 			func(c *Client) (bool, error) {
+<<<<<<< HEAD
 				cm, err := c.Clientset.CoreV1().ConfigMaps("default").Get(context.Background(), "test-apply-0", metav1.GetOptions{})
 				if err != nil {
 					return false, err
@@ -190,6 +214,17 @@ func TestClient_ApplyFiles_thenDelete(t *testing.T) {
 					return false, err
 				}
 				cm1, err := c.Clientset.CoreV1().ConfigMaps("default").Get(context.Background(), "test-apply-2", metav1.GetOptions{})
+=======
+				cm, err := c.Clientset.CoreV1().ConfigMaps("default").Get("test-apply-0", metav1.GetOptions{})
+				if err != nil {
+					return false, err
+				}
+				cm0, err := c.Clientset.CoreV1().ConfigMaps("default").Get("test-apply-1", metav1.GetOptions{})
+				if err != nil {
+					return false, err
+				}
+				cm1, err := c.Clientset.CoreV1().ConfigMaps("default").Get("test-apply-2", metav1.GetOptions{})
+>>>>>>> copy of changed github.com/johandry/klient repo
 				if err != nil {
 					return false, err
 				}
